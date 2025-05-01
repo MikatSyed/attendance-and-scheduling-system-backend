@@ -22,6 +22,7 @@ class AuthController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
+            'role' => $validatedData['role']
         ]);
     
         // Generate JWT token (using tymon/jwt-auth)
