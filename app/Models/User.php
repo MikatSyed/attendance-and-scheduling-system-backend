@@ -61,4 +61,14 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function batches()
+    {
+        return $this->belongsToMany(Batch::class, 'batch_user');
+    }
+
+    public function createdBatches()
+    {
+        return $this->hasMany(Batch::class, 'created_by');
+    }
 }
